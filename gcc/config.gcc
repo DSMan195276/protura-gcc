@@ -975,6 +975,11 @@ case ${target} in
   default_use_cxa_atexit=yes
   use_gcc_stdint=wrap
   ;;
+*-*-protura*)
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=yes
+  ;;
 esac
 
 case ${target} in
@@ -1977,6 +1982,9 @@ x86_64-*-fuchsia*)
 	tmake_file="${tmake_file} i386/t-x86_64-elf"
 	tm_file="${tm_file} i386/unix.h i386/att.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h fuchsia.h"
 	;;
+i[34567]86-*-protura*)
+    tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h protura.h"
+    ;;
 ia64*-*-elf*)
 	tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h ia64/sysv4.h ia64/elf.h"
 	tmake_file="ia64/t-ia64"
