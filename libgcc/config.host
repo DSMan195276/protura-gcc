@@ -814,6 +814,7 @@ x86_64-*-mingw*)
 	;;
 i[34567]86-*-protura*)
     tmake_files="$tmake_files i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+    extra_parts="$extra_parts crtbegin.o crtend.o"
     ;;
 ia64*-*-elf*)
 	extra_parts="$extra_parts crtbeginS.o crtendS.o crtfastmath.o"
